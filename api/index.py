@@ -96,21 +96,6 @@ def index():
     print(posts)
     return render_template('v2.html', posts=posts)
 
-@app.route('/createpost', methods=['GET', 'POST'])
-def createwebpost():
-    
-    if request.method == 'POST':
-        print(request.form)
-        title = request.form['titre']
-        body = request.form['body']
-        slug = request.form['slug']
-        image = request.form['image']
-        if request.form['key'] == 'Koala987':
-            create_post(title, body, slug, image)
-            return redirect('/blog')
-        
-    return render_template('createpost.html')
-
 # All Posts
 @app.route('/blog')    
 def blog():
@@ -174,7 +159,7 @@ def upload():
 @app.route('/render_preview', methods=['POST'])
 def render_preview():
     
-    canvas = Image.new('RGB', (630, 630), color=(255,255,255))
+    canvas = Image.new('RGB', (512, 512), color=(255,255,255))
     data = request.get_json()
     # Here you can process the received data as needed
     print(data)
@@ -185,7 +170,7 @@ def render_preview():
         if 'uploads' in bg:
             im_bg = Image.open(bg)
             im_bg = im_bg.convert('RGBA')
-            im_bg.resize((630,630))
+            im_bg.resize((512,512))
         else:
             im_bg = Image.open(f'./api/static/bg/{bg}')
             im_bg = im_bg.convert('RGBA')
@@ -198,7 +183,7 @@ def render_preview():
         if 'uploads' in skin:
             im_skin = Image.open(skin)
             im_skin =im_skin.convert('RGBA')
-            im_skin.resize((630,630))
+            im_skin.resize((512,512))
         else:
             im_skin = Image.open(f'./api/static/skin/{skin}')
             im_skin =im_skin.convert('RGBA')
