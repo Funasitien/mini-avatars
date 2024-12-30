@@ -568,13 +568,14 @@
         bg: "background_blue_marzizz.png",
         skin: "body_steve.png",
         cloth: "t-shirt_steve.png",
+        pants: "eyebrows_brown_steve.png",
+        shoes: "eyebrows_brown_steve.png",
         hair: "hair_brown_steve.png",
         hairplus: "hair_brown_steve.png",
         hat: "hair_brown_steve.png",
         eyes: "eyes_blue_steve.png",
-        eyesplus: "eyebrows_brown_steve.png",
         mouth: "mouth_steve.png",
-        plus: "empty.png",
+        plus: "vide.png",
       };
 
       componentButtons.forEach((button) => {
@@ -618,31 +619,23 @@
 
       // Render on change
       async function slow_renderPreview() {
-        // Load images
-        let bg = selected.bg;
-        let skin = selected.skin;
-        let cloth = selected.cloth;
-        let hair = selected.hair;
-        let eyes = selected.eyes;
-        let eyesplus = selected.eyesplus;
-        let mouth = selected.mouth;
-        let plus = selected.plus;
-
-        let bgImg = await fetch(`/static/bg/${bg}`);
-        let skinImg = await fetch(`/static/skin/${skin}`);
-        let clothImg = await fetch(`/static/cloth/${cloth}`);
-        let hairImg = await fetch(`/static/hair/${hair}`);
-        let eyesImg = await fetch(`/static/eyes/${eyes}`);
-        let eyesplusImg = await fetch(`/static/eyesplus/${eyesplus}`);
-        let mouthImg = await fetch(`/static/mouth/${mouth}`);
-        let plusImg = await fetch(`/static/plus/${plus}`);
+        let bgImg = await fetch(`/static/bg/${selected.bg}`);
+        let skinImg = await fetch(`/static/skin/${selected.skin}`);
+        let clothImg = await fetch(`/static/cloth/${selected.cloth}`);
+        let hairImg = await fetch(`/static/hair/${selected.hair}`);
+        let eyesImg = await fetch(`/static/eyes/${selected.eyes}`);
+        let pantsImg = await fetch(`/static/pants/${selected.pants}`);
+        let shoesImg = await fetch(`/static/shoes/${selected.shoes}`);
+        let mouthImg = await fetch(`/static/mouth/${selected.mouth}`);
+        let plusImg = await fetch(`/static/plus/${selected.plus}`);
 
         let imBg = await createImageBitmap(await bgImg.blob());
         let imSkin = await createImageBitmap(await skinImg.blob());
         let imCloth = await createImageBitmap(await clothImg.blob());
         let imHair = await createImageBitmap(await hairImg.blob());
         let imEyes = await createImageBitmap(await eyesImg.blob());
-        let imEyesPlus = await createImageBitmap(await eyesplusImg.blob());
+        let imPants = await createImageBitmap(await pantsImg.blob());
+        let imShoes = await createImageBitmap(await shoesImg.blob());
         let imMouth = await createImageBitmap(await mouthImg.blob());
         let imPlus = await createImageBitmap(await plusImg.blob());
 
@@ -657,7 +650,9 @@
         canvas.getContext("2d").drawImage(imMouth, 0, 0);
         canvas.getContext("2d").drawImage(imPlus, 0, 0);
         canvas.getContext("2d").drawImage(imEyes, 0, 0);
-        canvas.getContext("2d").drawImage(imEyesPlus, 0, 0);
+        canvas.getContext("2d").drawImage(imPants, 0, 0);
+
+canvas.getContext("2d").drawImage(imShoes, 0, 0);
         canvas.getContext("2d").drawImage(imCloth, 0, 0);
         canvas.getContext("2d").drawImage(imHair, 0, 0);
 
