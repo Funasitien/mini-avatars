@@ -218,6 +218,32 @@
         <li role="presentation">
           <button
             class="inline-flex items-center justify-center p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+            id="pants-tab"
+            data-tabs-target="#pants"
+            type="button"
+            role="tab"
+            aria-controls="pants"
+            aria-selected="false"
+          >
+            Pants
+          </button>
+        </li>
+        <li role="presentation">
+          <button
+            class="inline-flex items-center justify-center p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+            id="shoes-tab"
+            data-tabs-target="#shoes"
+            type="button"
+            role="tab"
+            aria-controls="shoes"
+            aria-selected="false"
+          >
+            Shoes
+          </button>
+        </li>
+        <li role="presentation">
+          <button
+            class="inline-flex items-center justify-center p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
             id="hat-tab"
             data-tabs-target="#hat"
             type="button"
@@ -239,19 +265,6 @@
             aria-selected="false"
           >
             Eyes
-          </button>
-        </li>
-        <li role="presentation">
-          <button
-            class="inline-flex items-center justify-center p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
-            id="eyesplus-tab"
-            data-tabs-target="#eyesplus"
-            type="button"
-            role="tab"
-            aria-controls="eyesplus"
-            aria-selected="false"
-          >
-            Eyes +
           </button>
         </li>
 
@@ -417,6 +430,38 @@
         {% endfor %}
       </div>
 
+<div
+        class="hidden p-4 rounded-lg bg-gray-300 dark:bg-gray-800 mx-3"
+        id="pants"
+        role="tabpanel"
+        aria-labelledby="pants-tab"
+      >
+        {% for image in pants_images %}
+        <button
+          class="component-button w-24 lg:w-36 h-24 lg:h-36 dark:border-gray-600 rounded-lg border border-gray-200"
+          data-component="eyesplus"
+          data-value="{{ image }}"
+          style="background-image: url({{ url_for('static', filename='eyesplus/'+image) }});"
+        ></button>
+        {% endfor %}
+      </div>
+
+<div
+        class="hidden p-4 rounded-lg bg-gray-300 dark:bg-gray-800 mx-3"
+        id="shoes"
+        role="tabpanel"
+        aria-labelledby="shoes-tab"
+      >
+        {% for image in shoes_images %}
+        <button
+          class="component-button w-24 lg:w-36 h-24 lg:h-36 dark:border-gray-600 rounded-lg border border-gray-200"
+          data-component="eyesplus"
+          data-value="{{ image }}"
+          style="background-image: url({{ url_for('static', filename='eyesplus/'+image) }});"
+        ></button>
+        {% endfor %}
+      </div>
+
       <div
         class="hidden p-4 rounded-lg bg-gray-300 dark:bg-gray-800 mx-3"
         id="hat"
@@ -445,22 +490,6 @@
           data-component="eyes"
           data-value="{{ image }}"
           style="background-image: url({{ url_for('static', filename='eyes/'+image) }});"
-        ></button>
-        {% endfor %}
-      </div>
-
-      <div
-        class="hidden p-4 rounded-lg bg-gray-300 dark:bg-gray-800 mx-3"
-        id="eyesplus"
-        role="tabpanel"
-        aria-labelledby="eyesplus-tab"
-      >
-        {% for image in eyes_plus %}
-        <button
-          class="component-button w-24 lg:w-36 h-24 lg:h-36 dark:border-gray-600 rounded-lg border border-gray-200"
-          data-component="eyesplus"
-          data-value="{{ image }}"
-          style="background-image: url({{ url_for('static', filename='eyesplus/'+image) }});"
         ></button>
         {% endfor %}
       </div>
