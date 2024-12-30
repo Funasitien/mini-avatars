@@ -64,7 +64,7 @@ for f in os.listdir('./api/static/eyes'):
         EYES_IMAGES.append(f)
 
 EYES_PLUS = []
-for f in os.listdir('./api/static/eyesplus'):
+for f in os.listdir('./api/static/pants'):
     if f.endswith('.png'):
         EYES_PLUS.append(f)        
 
@@ -214,7 +214,7 @@ def render_preview():
         pass
     try:
         eyesplus = data['eyesplus']
-        im_eyesplus = Image.open(f'./api/static/eyesplus/{eyesplus}')
+        im_eyesplus = Image.open(f'./api/static/pants/{eyesplus}')
         im_eyesplus = im_eyesplus.convert('RGBA')
         canvas.paste(im_eyesplus, (0,0), im_eyesplus)
     except:
