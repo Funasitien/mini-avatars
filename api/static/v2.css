@@ -1,0 +1,23 @@
+:root {
+  --bs-border-width: 0;
+  --bs-border-radius: 0;
+}
+
+@font-face {
+  font-family: 'Pixel Perfect';
+  src: local('Pixel Perfect Regular'), local('PixelPerfect'),
+      url('PixelPerfect.woff2') format('woff2'),
+      url('PixelPerfect.woff') format('woff'),
+      url('PixelPerfect.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.component-button {
+  background-size: contain;
+  border-radius: 5px;
+}
+
+.pixel {
+  font-family: 'Pixel Perfect';
+}

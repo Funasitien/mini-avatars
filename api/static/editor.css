@@ -1,0 +1,114 @@
+:root {
+  --bs-border-width: 0;
+  --bs-border-radius: 0;
+}
+
+@font-face {
+  font-family: 'Pixel Perfect';
+  src: local('Pixel Perfect Regular'), local('PixelPerfect'),
+      url('PixelPerfect.woff2') format('woff2'),
+      url('PixelPerfect.woff') format('woff'),
+      url('PixelPerfect.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+#preview {
+  height: auto;
+  width: 50vh;
+}
+
+.mc-gray svg,
+.mc-green svg {
+  translate: 0px -3px;
+}
+
+@media only screen and (max-width: 600px) {
+  .boxy {
+    width: fit-content;
+  }
+  #preview {
+    height: auto;
+    width: 40vh;
+  }
+  .supernavbar {
+    display: none;
+  }
+  .mobileit {
+    font-size: 0;
+  }
+  .mobileit svg {
+    font-size: initial;
+  }
+  .mc-gray,
+  .mc-green {
+    padding: 6px 2px 6px 6px !important
+  }
+}
+
+.option,
+.component-button {
+  height: 10rem;
+  width: 10rem;
+  background-size: contain;
+  border-radius: 1rem;
+  display: inline-block;
+}
+
+.option img,
+.component-button img {
+  height: 12rem;
+  width: 12rem;
+}
+
+body {
+  background-color: #dddddd;
+}
+
+.editor {
+  background-color: #bbbbbb;
+}
+
+.nav-link,
+.mc-gray {
+  border-radius: 0;
+  background-color: #171615;
+  background-image: linear-gradient(#3d3938,#171615);
+  outline: .063rem solid #fff;
+  color: #FFFFFF;
+  text-decoration: none;
+  border-radius: none !important;
+  padding: 7px 20px 10px;
+  text-transform: uppercase;
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: bold;
+  letter-spacing: 1px;
+  display: inline-block;
+  font-family: 'Pixel Perfect';
+}
+
+.nav-link.active,
+.mc-green {
+  background-image: linear-gradient(#3b8526,#3b8526); 
+  background-color: #3b8526; 
+  color: #FFFFFF;
+  text-decoration: none;
+  padding: 7px 20px 10px;
+  text-transform: uppercase;
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: bold;
+  letter-spacing: 1px;
+  display: inline-block;
+  box-shadow: 
+    inset 0 4px #6bc349, 
+    inset 0 -4px #2a631c, 
+    0 4px rgba(0,0,0,.25);
+  text-shadow: 0 1px 0 #2a631c;
+  font-family: 'Pixel Perfect';
+
+}
+
+.tab-pane {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
