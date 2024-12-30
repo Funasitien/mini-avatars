@@ -63,10 +63,15 @@ for f in os.listdir('./api/static/eyes'):
     if f.endswith('.png'):
         EYES_IMAGES.append(f)
 
-EYES_PLUS = []
+PANTS_IMAGES = []
 for f in os.listdir('./api/static/pants'):
     if f.endswith('.png'):
-        EYES_PLUS.append(f)        
+        PANTS_IMAGES.append(f)        
+
+SHOES_IMAGES = []
+for f in os.listdir('./api/static/shoes'):
+    if f.endswith('.png'):
+        SHOES_IMAGES.append(f)        
 
 MOUTH_IMAGES = []
 for f in os.listdir('./api/static/mouth'):
@@ -124,7 +129,8 @@ def v2editor():
         hair_images=HAIR_IMAGES,
         bg_images = BG_IMAGES,
         eyes_images = EYES_IMAGES,
-        eyes_plus = EYES_PLUS,
+        shoes_images = SHOES_IMAGES,
+        pants_images = PANTS_IMAGES,
         mouth_images=MOUTH_IMAGES,
         hair_plus=HAIR_PLUS,
         hat_images=HAT_IMAGES,
