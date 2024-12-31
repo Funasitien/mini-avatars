@@ -197,7 +197,7 @@ def render_preview():
     except:
         pass
     try:
-        im_cape = Image.open(f"./api/static/capes/{data['cape']}").convert('RGBA')
+        im_cape = Image.open(f"./api/static/capes/{data['capes']}").convert('RGBA')
         canvas.paste(im_cape, (0,0), im_cape)
     except:
         pass
