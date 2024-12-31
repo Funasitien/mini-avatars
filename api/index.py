@@ -43,6 +43,11 @@ for f in os.listdir('./api/static/hair'):
     if f.endswith('.png'):
         HAIR_IMAGES.append(f)
 
+SHIRT_IMAGES = []
+for f in os.listdir('./api/static/shirt'):
+    if f.endswith('.png'):
+        SHIRT_IMAGES.append(f)
+
 HAIR_PLUS = []
 for f in os.listdir('./api/static/hairplus'):
     if f.endswith('.png'):
@@ -197,13 +202,7 @@ def render_preview():
         canvas.paste(im_skin, (0,0), im_skin)
     except:
         pass
-    try:
-        cloth = data['cloth']
-        im_cloth = Image.open(f'./api/static/cloth/{cloth}')
-        im_cloth = im_cloth.convert('RGBA')
-        canvas.paste(im_cloth, (0,0), im_cloth)
-    except:
-        pass
+    
     try:
         hair = data['hair']
         im_hair = Image.open(f'./api/static/hair/{hair}')
@@ -219,6 +218,13 @@ def render_preview():
     except:
         pass
     try:
+        shirt = data['shirt']
+        im_shirt = Image.open(f'./api/static/shirt/{shirt}')
+        im_shirt = im_shirt.convert('RGBA')
+        canvas.paste(im_shirt, (0,0), im_shirt)
+    except:
+        pass
+    try:
         pants = data['pants']
         im_pants = Image.open(f'./api/static/pants/{pants}')
         im_pants = im_pants.convert('RGBA')
@@ -230,6 +236,13 @@ def render_preview():
         im_shoes = Image.open(f'./api/static/shoes/{shoes}')
         im_shoes = im_shoes.convert('RGBA')
         canvas.paste(im_shoes, (0,0), im_shoes)
+    except:
+        pass
+    try:
+        cloth = data['cloth']
+        im_cloth = Image.open(f'./api/static/cloth/{cloth}')
+        im_cloth = im_cloth.convert('RGBA')
+        canvas.paste(im_cloth, (0,0), im_cloth)
     except:
         pass
     try:
