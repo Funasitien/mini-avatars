@@ -139,6 +139,7 @@ def v2editor():
         mouth_images=MOUTH_IMAGES,
         hair_plus=HAIR_PLUS,
         hat_images=HAT_IMAGES,
+        shirt_images=SHIRT_IMAGES,
         plus = PLUS
     )
 
