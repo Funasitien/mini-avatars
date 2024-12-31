@@ -219,10 +219,17 @@ def render_preview():
     except:
         pass
     try:
-        eyesplus = data['eyesplus']
-        im_eyesplus = Image.open(f'./api/static/pants/{eyesplus}')
-        im_eyesplus = im_eyesplus.convert('RGBA')
-        canvas.paste(im_eyesplus, (0,0), im_eyesplus)
+        eyesplus = data['pants']
+        im_pants = Image.open(f'./api/static/pants/{pants}')
+        im_pants = im_eyesplus.convert('RGBA')
+        canvas.paste(im_pants, (0,0), im_pants)
+    except:
+        pass
+    try:
+        shoes = data['shoes']
+        im_shoes = Image.open(f'./api/static/shoes/{shoes}')
+        im_shoes = im_eyesplus.convert('RGBA')
+        canvas.paste(im_shoes, (0,0), im_shoes)
     except:
         pass
     try:
