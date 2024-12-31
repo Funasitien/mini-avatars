@@ -439,7 +439,7 @@
         {% for image in pants_images %}
         <button
           class="component-button w-24 lg:w-36 h-24 lg:h-36 dark:border-gray-600 rounded-lg border border-gray-200"
-          data-component="eyesplus"
+          data-component="pants"
           data-value="{{ image }}"
           style="background-image: url({{ url_for('static', filename='pants/'+image) }});"
         ></button>
@@ -455,7 +455,7 @@
         {% for image in shoes_images %}
         <button
           class="component-button w-24 lg:w-36 h-24 lg:h-36 dark:border-gray-600 rounded-lg border border-gray-200"
-          data-component="eyesplus"
+          data-component="shoes"
           data-value="{{ image }}"
           style="background-image: url({{ url_for('static', filename='shoes/'+image) }});"
         ></button>
@@ -595,20 +595,9 @@
           method: "POST",
           headers: {
             "Content-Type": "application/json",
+            "App-Caller": "render/preview",
           },
-          body: JSON.stringify({
-            bg: selected.bg,
-            hat: selected.hat,
-            hairplus: selected.hairplus,
-            skin: selected.skin,
-            cloth: selected.cloth,
-            hair: selected.hair,
-            eyes: selected.eyes,
-            pants: selected.pants,
-            shoes: selected.shoes,
-            mouth: selected.mouth,
-            plus: selected.plus,
-          }),
+          body: JSON.stringify(selected),
         })
           .then((response) => response.blob())
           .then((imageBlob) => {
