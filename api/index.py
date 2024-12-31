@@ -37,7 +37,12 @@ CLOTH_IMAGES = []
 for f in os.listdir('./api/static/cloth'):
     if f.endswith('.png'):
         CLOTH_IMAGES.append(f)
-        
+
+CAPES_IMAGES = []  
+for f in os.listdir('./api/static/capes'):
+    if f.endswith('.png'):
+        CAPES_IMAGES.append(f)
+  
 HAIR_IMAGES = []
 for f in os.listdir('./api/static/hair'):
     if f.endswith('.png'):
@@ -140,6 +145,7 @@ def v2editor():
         hair_plus=HAIR_PLUS,
         hat_images=HAT_IMAGES,
         shirt_images=SHIRT_IMAGES,
+        capes_images=CAPES_IMAGES,
         plus = PLUS
     )
 
@@ -191,10 +197,15 @@ def render_preview():
     except:
         pass
     try:
+        im_cape = Image.open(f"./api/static/capes/{data['cape']}").convert('RGBA')
+        canvas.paste(im_cape, (0,0), im_cape)
+    except:
+        pass
+    try:
         skin = data['skin']
         if 'uploads' in skin:
             im_skin = Image.open(skin)
-            im_skin =im_skin.convert('RGBA')
+            im_skin = im_skin.convert('RGBA')
             im_skin.resize((512,512))
         else:
             im_skin = Image.open(f'./api/static/skin/{skin}')
