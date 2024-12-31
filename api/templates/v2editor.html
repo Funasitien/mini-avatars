@@ -205,6 +205,19 @@
         <li role="presentation">
           <button
             class="inline-flex items-center justify-center p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+            id="shirt-tab"
+            data-tabs-target="#shirt"
+            type="button"
+            role="tab"
+            aria-controls="shirt"
+            aria-selected="false"
+          >
+            Shirts
+          </button>
+        </li>
+        <li role="presentation">
+          <button
+            class="inline-flex items-center justify-center p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
             id="cloth-tab"
             data-tabs-target="#cloth"
             type="button"
@@ -414,6 +427,23 @@
         {% endfor %}
       </div>
 
+<div
+        class="hidden p-4 rounded-lg bg-gray-300 dark:bg-gray-800 mx-3"
+        id="shirt"
+        role="tabpanel"
+        aria-labelledby="shirt-tab"
+      >
+        {% for image in shirt_images %}
+        <button
+          class="component-button w-24 lg:w-36 h-24 lg:h-36 dark:border-gray-600 rounded-lg border border-gray-200"
+          data-component="shirt"
+          data-value="{{ image }}"
+          style="background-image: url({{ url_for('static', filename='shirt/'+image) }});"
+        ></button>
+        {% endfor %}
+      </div>
+
+
       <div
         class="hidden p-4 rounded-lg bg-gray-300 dark:bg-gray-800 mx-3"
         id="cloth"
@@ -567,7 +597,8 @@
       let selected = {
         bg: "pioches-nuit.png",
         skin: "funa.png",
-        cloth: "chemise-blanc-bleu.png",
+        shirt: "chemise-blanc-bleu.png",
+        cloth: "vide.png",
         pants: "classe-bleu.png",
         shoes: "classe-blanc.png",
         hair: "chatain-chataigne.png",
