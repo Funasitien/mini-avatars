@@ -36,11 +36,6 @@ for f in os.listdir('./api/static/mouth'):
     if f.endswith('.png'):
         MOUTH_IMAGES.append(f)
 
-EYES_PLUS = []
-for f in os.listdir('./api/static/eyesplus'):
-    if f.endswith('.png'):
-        EYES_PLUS.append(f)        
-
 PLUS = []
 for f in os.listdir('./api/static/plus'):
     if f.endswith('.png'):
@@ -53,13 +48,13 @@ def home():
 # Editor route            
 @app.route('/editor')
 def editor():
-    return render_template('editor.html', 
+    return render_template('v2editor.html', 
         skin_images=SKIN_IMAGES,
         cloth_images=CLOTH_IMAGES,
         hair_images=HAIR_IMAGES,
         bg_images = BG_IMAGES,
         eyes_images = EYES_IMAGES,
-        eyes_plus = EYES_PLUS,
+        #eyes_plus = EYES_PLUS,
         plus = PLUS,
         mouth_images = MOUTH_IMAGES
     )
