@@ -280,7 +280,19 @@
             Eyes
           </button>
         </li>
-
+<li role="presentation">
+          <button
+            class="inline-flex items-center justify-center p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+            id="capes-tab"
+            data-tabs-target="#capes"
+            type="button"
+            role="tab"
+            aria-controls="capes"
+            aria-selected="false"
+          >
+            Capes
+          </button>
+        </li>
         <li role="presentation">
           <button
             class="inline-flex items-center justify-center p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
@@ -523,7 +535,21 @@
         ></button>
         {% endfor %}
       </div>
-
+<div
+        class="hidden p-4 rounded-lg bg-gray-300 dark:bg-gray-800 mx-3"
+        id="capes"
+        role="tabpanel"
+        aria-labelledby="capes-tab"
+      >
+        {% for image in capes_images %}
+        <button
+          class="component-button w-24 lg:w-36 h-24 lg:h-36 dark:border-gray-600 rounded-lg border border-gray-200"
+          data-component="capes"
+          data-value="{{ image }}"
+          style="background-image: url({{ url_for('static', filename='capes/'+image) }});"
+        ></button>
+        {% endfor %}
+      </div>
       <div
         class="hidden p-4 rounded-lg bg-gray-300 dark:bg-gray-800 mx-3"
         id="plus"
@@ -599,6 +625,7 @@
         skin: "funa.png",
         shirt: "chemise-blanc-bleu.png",
         cloth: "vide.png",
+        cape: "vide.png",
         pants: "classe-bleu.png",
         shoes: "classe-blanc.png",
         hair: "chatain-chataigne.png",
