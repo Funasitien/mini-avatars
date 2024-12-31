@@ -219,7 +219,7 @@ def render_preview():
     except:
         pass
     try:
-        eyesplus = data['pants']
+        pants = data['pants']
         im_pants = Image.open(f'./api/static/pants/{pants}')
         im_pants = im_pants.convert('RGBA')
         canvas.paste(im_pants, (0,0), im_pants)
