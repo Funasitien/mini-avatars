@@ -317,7 +317,7 @@
       >
         {% for image in bg_images %}
         <button
-          class="component-button w-full h-full dark:border-gray-600 rounded-lg border border-gray-200"
+          class="component-button w-[116px] h-full dark:border-gray-600 rounded-lg border border-gray-200"
           data-component="bg"
           data-value="{{ image }}"
           style="background-image: url({{ url_for('static', filename='bg/'+image) }});"
