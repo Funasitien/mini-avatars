@@ -310,7 +310,7 @@
     </div>
     <div id="default-tab-content">
       <div
-        class="hidden p-4 rounded-lg bg-gray-300 dark:bg-gray-800 mx-3 grid grid-cols-3 md:grid-cols-5 lg:grid-cols-7"
+        class="hidden p-4 rounded-lg bg-gray-300 dark:bg-gray-800 mx-3 grid grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-2"
         id="bg"
         role="tabpanel"
         aria-labelledby="bg-tab"
@@ -324,7 +324,7 @@
         />
         {% endfor %}
 
-        <div class="mt-2 flex items-center justify-center w-full">
+        <div class="mt-2 flex items-center justify-center w-full col-span-2">
           <label
             for="dropzone-file-bg"
             class="p-4 flex flex-col items-center justify-center w-full h-32 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
@@ -359,21 +359,21 @@
       </div>
 
       <div
-        class="hidden p-4 rounded-lg bg-gray-300 dark:bg-gray-800 mx-3"
+        class="hidden p-4 rounded-lg bg-gray-300 dark:bg-gray-800 mx-3 grid grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-2"
         id="skin"
         role="tabpanel"
         aria-labelledby="skin-tab"
       >
         {% for image in skin_images %}
-        <button
-          class="component-button w-[116px] lg:w-36 h-[116px] lg:h-36 dark:border-gray-600 rounded-lg border border-gray-200"
+        <img
+          class="component-button w-full h-auto dark:border-gray-600 rounded-lg border border-gray-200"
           data-component="skin"
           data-value="{{ image }}"
-          style="background-image: url({{ url_for('static', filename='skin/'+image) }});"
-        ></button>
+          src="{{ url_for('static', filename='skin/'+image) }}"
+        />
         {% endfor %}
 
-        <div class="mt-2 flex items-center justify-center w-full">
+        <div class="mt-2 flex items-center justify-center w-full col-span-2">
           <label
             for="dropzone-file-skin"
             class="p-4 flex flex-col items-center justify-center w-full h-32 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
