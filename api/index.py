@@ -193,7 +193,7 @@ def render_preview():
             im_bg = Image.open(f'./api/static/bg/{bg}')
             im_bg = im_bg.convert('RGBA')
             
-        canvas.paste(im_bg, (0,0))
+        canvas.paste(im_bg, (0,0), im_bg)
     except:
         pass
     try:
