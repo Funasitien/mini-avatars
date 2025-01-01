@@ -5,37 +5,37 @@
     <meta name="viewport" content="width=device-width" />
 
     <!-- Primary Meta Tags -->
-    <title>Origin Realms Avatar Maker - Editor</title>
-    <meta name="title" content="Origin Realms Avatar Maker - Editor" />
+    <title>Mini Avatar Maker - Editor</title>
+    <meta name="title" content="Mini Avatar Maker - Editor" />
     <meta
       name="description"
-      content="Make your own avatar in the mood of Origin Realms with a snap of a finger!"
+      content="Make your own avatar in the mood of [me] with a snap of a finger!"
     />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://or.dreamclouds.fr" />
-    <meta property="og:title" content="Origin Realms Avatar Maker - Editor" />
+    <meta property="og:title" content="Mini Avatar Maker - Editor" />
     <meta
       property="og:description"
-      content="Make your own avatar in the mood of Origin Realms with a snap of a finger!"
+      content="Make your own avatar in the mood of [me] with a snap of a finger!"
     />
     <meta
       property="og:image"
-      content="https://or.dreamclouds.fr/meta-tags.png"
+      content="/meta-tags.png"
     />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://or.dreamclouds.fr" />
-    <meta property="twitter:title" content="Origin Realms Avatar Maker" />
+    <meta property="twitter:title" content="Mini Avatar Maker" />
     <meta
       property="twitter:description"
-      content="Make your own avatar in the mood of Origin Realms with a snap of a finger!"
+      content="Make your own avatar in the mood of [me] with a snap of a finger!"
     />
     <meta
       property="twitter:image"
-      content="https://or.dreamclouds.fr/meta-tags.png"
+      content="/meta-tags.png"
     />
 
     <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}" />
@@ -280,7 +280,7 @@
             Eyes
           </button>
         </li>
-<li role="presentation">
+        <li role="presentation">
           <button
             class="inline-flex items-center justify-center p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
             id="capes-tab"
@@ -457,50 +457,50 @@
 
 
       <div
-        class="hidden p-4 rounded-lg bg-gray-300 dark:bg-gray-800 mx-3"
+        class="hidden p-4 rounded-lg bg-gray-300 dark:bg-gray-800 mx-3  grid grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-2"
         id="cloth"
         role="tabpanel"
         aria-labelledby="cloth-tab"
       >
         {% for image in cloth_images %}
-        <button
+        <img
           class="component-button w-[116px] lg:w-36 h-[116px] lg:h-36 dark:border-gray-600 rounded-lg border border-gray-200"
           data-component="cloth"
           data-value="{{ image }}"
-          style="background-image: url({{ url_for('static', filename='cloth/'+image) }});"
-        ></button>
+          src="{{ url_for('static', filename='cloth/'+image) }}"
+        />
         {% endfor %}
       </div>
 
-<div
+      <div
         class="hidden p-4 rounded-lg bg-gray-300 dark:bg-gray-800 mx-3"
         id="pants"
         role="tabpanel"
         aria-labelledby="pants-tab"
       >
         {% for image in pants_images %}
-        <button
+        <img
           class="component-button w-[116px] lg:w-36 h-[116px] lg:h-36 dark:border-gray-600 rounded-lg border border-gray-200"
           data-component="pants"
           data-value="{{ image }}"
-          style="background-image: url({{ url_for('static', filename='pants/'+image) }});"
-        ></button>
+          src="{{ url_for('static', filename='pants/'+image) }}"
+        />
         {% endfor %}
       </div>
 
-<div
+      <div
         class="hidden p-4 rounded-lg bg-gray-300 dark:bg-gray-800 mx-3"
         id="shoes"
         role="tabpanel"
         aria-labelledby="shoes-tab"
       >
         {% for image in shoes_images %}
-        <button
+        <img
           class="component-button w-[116px] lg:w-36 h-[116px] lg:h-36 dark:border-gray-600 rounded-lg border border-gray-200"
           data-component="shoes"
           data-value="{{ image }}"
-          style="background-image: url({{ url_for('static', filename='shoes/'+image) }});"
-        ></button>
+          src="{{ url_for('static', filename='shoes/'+image) }}"
+        />
         {% endfor %}
       </div>
 
@@ -511,12 +511,12 @@
         aria-labelledby="hat-tab"
       >
         {% for image in hat_images %}
-        <button
+        <img
           class="component-button w-[116px] lg:w-36 h-[116px] lg:h-36 dark:border-gray-600 rounded-lg border border-gray-200"
           data-component="hat"
           data-value="{{ image }}"
-          style="background-image: url({{ url_for('static', filename='hat/'+image) }});"
-        ></button>
+          src="{{ url_for('static', filename='hat/'+image) }}"
+        />
         {% endfor %}
       </div>
 
@@ -527,27 +527,27 @@
         aria-labelledby="eyes-tab"
       >
         {% for image in eyes_images %}
-        <button
+        <img
           class="component-button w-[116px] lg:w-36 h-[116px] lg:h-36 dark:border-gray-600 rounded-lg border border-gray-200"
           data-component="eyes"
           data-value="{{ image }}"
-          style="background-image: url({{ url_for('static', filename='eyes/'+image) }});"
-        ></button>
+          src="{{ url_for('static', filename='eyes/'+image) }}"
+        />
         {% endfor %}
       </div>
-<div
+      <div
         class="hidden p-4 rounded-lg bg-gray-300 dark:bg-gray-800 mx-3"
         id="capes"
         role="tabpanel"
         aria-labelledby="capes-tab"
       >
         {% for image in capes_images %}
-        <button
+        <img
           class="component-button w-[116px] lg:w-36 h-[116px] lg:h-36 dark:border-gray-600 rounded-lg border border-gray-200"
           data-component="capes"
           data-value="{{ image }}"
-          style="background-image: url({{ url_for('static', filename='capes/'+image) }});"
-        ></button>
+          src="{{ url_for('static', filename='capes/'+image) }}"
+        />
         {% endfor %}
       </div>
       <div
@@ -557,12 +557,12 @@
         aria-labelledby="plus-tab"
       >
         {% for image in plus %}
-        <button
+        <img
           class="component-button w-[116px] lg:w-36 h-[116px] lg:h-36 dark:border-gray-600 rounded-lg border border-gray-200"
           data-component="plus"
           data-value="{{ image }}"
-          style="background-image: url({{ url_for('static', filename='plus/'+image) }});"
-        ></button>
+          src="{{ url_for('static', filename='plus/'+image) }}"
+        />
         {% endfor %}
       </div>
     </div>
