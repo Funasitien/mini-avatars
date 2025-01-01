@@ -177,10 +177,10 @@ def upload():
 @app.route('/render_preview', methods=['POST'])
 def render_preview():
     
-    canvas = Image.new('RGB', (512, 512), color=(255,255,255))
+    canvas = Image.new('RGBA', (512, 512), color=(255,255,255))
     data = request.get_json()
     # Here you can process the received data as needed
-    print(data)
+    #print(data)
 
     
     try:
