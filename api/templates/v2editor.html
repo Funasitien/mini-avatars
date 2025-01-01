@@ -464,7 +464,7 @@
       >
         {% for image in cloth_images %}
         <img
-          class="component-button w-[116px] lg:w-36 h-[116px] lg:h-36 dark:border-gray-600 rounded-lg border border-gray-200"
+          class="component-button w-full h-auto dark:border-gray-600 rounded-lg border border-gray-200"
           data-component="cloth"
           data-value="{{ image }}"
           src="{{ url_for('static', filename='cloth/'+image) }}"
@@ -473,14 +473,14 @@
       </div>
 
       <div
-        class="hidden p-4 rounded-lg bg-gray-300 dark:bg-gray-800 mx-3"
+        class=h"idden p-4 rounded-lg bg-gray-300 dark:bg-gray-800 mx-3  grid grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-2"
         id="pants"
         role="tabpanel"
         aria-labelledby="pants-tab"
       >
         {% for image in pants_images %}
         <img
-          class="component-button w-[116px] lg:w-36 h-[116px] lg:h-36 dark:border-gray-600 rounded-lg border border-gray-200"
+          class="component-button w-full h-auto dark:border-gray-600 rounded-lg border border-gray-200"
           data-component="pants"
           data-value="{{ image }}"
           src="{{ url_for('static', filename='pants/'+image) }}"
@@ -489,14 +489,14 @@
       </div>
 
       <div
-        class="hidden p-4 rounded-lg bg-gray-300 dark:bg-gray-800 mx-3"
+        class=h"idden p-4 rounded-lg bg-gray-300 dark:bg-gray-800 mx-3  grid grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-2"
         id="shoes"
         role="tabpanel"
         aria-labelledby="shoes-tab"
       >
         {% for image in shoes_images %}
         <img
-          class="component-button w-[116px] lg:w-36 h-[116px] lg:h-36 dark:border-gray-600 rounded-lg border border-gray-200"
+          class="component-button w-full h-auto dark:border-gray-600 rounded-lg border border-gray-200"
           data-component="shoes"
           data-value="{{ image }}"
           src="{{ url_for('static', filename='shoes/'+image) }}"
@@ -505,14 +505,14 @@
       </div>
 
       <div
-        class="hidden p-4 rounded-lg bg-gray-300 dark:bg-gray-800 mx-3"
+        class=h"idden p-4 rounded-lg bg-gray-300 dark:bg-gray-800 mx-3  grid grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-2"
         id="hat"
         role="tabpanel"
         aria-labelledby="hat-tab"
       >
         {% for image in hat_images %}
         <img
-          class="component-button w-[116px] lg:w-36 h-[116px] lg:h-36 dark:border-gray-600 rounded-lg border border-gray-200"
+          class="component-button w-full h-auto dark:border-gray-600 rounded-lg border border-gray-200"
           data-component="hat"
           data-value="{{ image }}"
           src="{{ url_for('static', filename='hat/'+image) }}"
@@ -521,14 +521,14 @@
       </div>
 
       <div
-        class="hidden p-4 rounded-lg bg-gray-300 dark:bg-gray-800 mx-3"
+        class=h"idden p-4 rounded-lg bg-gray-300 dark:bg-gray-800 mx-3  grid grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-2"
         id="eyes"
         role="tabpanel"
         aria-labelledby="eyes-tab"
       >
         {% for image in eyes_images %}
         <img
-          class="component-button w-[116px] lg:w-36 h-[116px] lg:h-36 dark:border-gray-600 rounded-lg border border-gray-200"
+          class="component-button w-full h-auto dark:border-gray-600 rounded-lg border border-gray-200"
           data-component="eyes"
           data-value="{{ image }}"
           src="{{ url_for('static', filename='eyes/'+image) }}"
@@ -536,14 +536,14 @@
         {% endfor %}
       </div>
       <div
-        class="hidden p-4 rounded-lg bg-gray-300 dark:bg-gray-800 mx-3"
+        class=h"idden p-4 rounded-lg bg-gray-300 dark:bg-gray-800 mx-3  grid grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-2"
         id="capes"
         role="tabpanel"
         aria-labelledby="capes-tab"
       >
         {% for image in capes_images %}
         <img
-          class="component-button w-[116px] lg:w-36 h-[116px] lg:h-36 dark:border-gray-600 rounded-lg border border-gray-200"
+          class="component-button w-full h-auto dark:border-gray-600 rounded-lg border border-gray-200"
           data-component="capes"
           data-value="{{ image }}"
           src="{{ url_for('static', filename='capes/'+image) }}"
@@ -551,14 +551,14 @@
         {% endfor %}
       </div>
       <div
-        class="hidden p-4 rounded-lg bg-gray-300 dark:bg-gray-800 mx-3"
+        class=h"idden p-4 rounded-lg bg-gray-300 dark:bg-gray-800 mx-3  grid grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-2"
         id="plus"
         role="tabpanel"
         aria-labelledby="plus-tab"
       >
         {% for image in plus %}
         <img
-          class="component-button w-[116px] lg:w-36 h-[116px] lg:h-36 dark:border-gray-600 rounded-lg border border-gray-200"
+          class="component-button w-full h-auto dark:border-gray-600 rounded-lg border border-gray-200"
           data-component="plus"
           data-value="{{ image }}"
           src="{{ url_for('static', filename='plus/'+image) }}"
