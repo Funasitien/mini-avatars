@@ -316,12 +316,12 @@
         aria-labelledby="bg-tab"
       >
         {% for image in bg_images %}
-        <button
-          class="component-button w-[116px] h-full dark:border-gray-600 rounded-lg border border-gray-200"
+        <img
+          class="component-button w-full h-auto dark:border-gray-600 rounded-lg border border-gray-200"
           data-component="bg"
           data-value="{{ image }}"
-          style="background-image: url({{ url_for('static', filename='bg/'+image) }});"
-        ></button>
+          src="{{ url_for('static', filename='bg/'+image) }}"
+        />
         {% endfor %}
 
         <div class="mt-2 flex items-center justify-center w-full">
