@@ -109,7 +109,7 @@ def index():
     c.execute('SELECT title, body, slug, image FROM posts ORDER BY date DESC LIMIT 3')
     posts = c.fetchall()
     print(posts)
-    return render_template('v2.html', posts=posts)
+    return render_template('home.html', posts=posts)
 
 # All Posts
 @app.route('/blog')    
@@ -133,7 +133,7 @@ def post(slug):
 # Editor route for v2         
 @app.route('/editor')
 def v2editor():
-    return render_template('v2editor.html', 
+    return render_template('editor.html', 
         skin_images=SKIN_IMAGES,
         cloth_images=CLOTH_IMAGES,
         hair_images=HAIR_IMAGES,
